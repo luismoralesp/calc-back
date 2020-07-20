@@ -4,8 +4,11 @@ const { GraphQLApp } = require('@keystonejs/app-graphql');
 const { AdminUIApp } = require('@keystonejs/app-admin-ui');
 const keystone = require('./libs/keyston');
 const model = require('./src/model')
+const controller = require('./src/controller')
 
 model()
+controller()
+
 
 const authStrategy = keystone.createAuthStrategy({
   type: PasswordAuthStrategy,
