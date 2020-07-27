@@ -1,5 +1,6 @@
 const keystone = require('../../libs/keyston');
 const { Text } = require('@keystonejs/fields');
+const { acm } = require('../controllers/AccessControlManager');
 
 module.exports = keystone.createList('Image', {
     fields: {
@@ -10,7 +11,5 @@ module.exports = keystone.createList('Image', {
         type: { type: Text },
         url: { type: Text },
     },
-    access: {
-      auth: true,
-    },
+    access: acm()
 });

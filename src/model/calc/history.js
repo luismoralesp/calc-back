@@ -1,5 +1,6 @@
-const keystone = require('../../libs/keyston');
+const keystone = require('../../../libs/keyston');
 const { Relationship, Text, DateTime } = require('@keystonejs/fields');
+const { acm } = require('../../controllers/AccessControlManager');
 
 module.exports = keystone.createList('History', {
     fields: {
@@ -18,7 +19,5 @@ module.exports = keystone.createList('History', {
             many: false
         }
     },
-    access: {
-      auth: true,
-    },
+    access: acm()
 });

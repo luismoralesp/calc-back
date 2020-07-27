@@ -1,5 +1,6 @@
-const keystone = require('../../libs/keyston');
+const keystone = require('../../../libs/keyston');
 const { Text, Decimal } = require('@keystonejs/fields');
+const { acm } = require('../../controllers/AccessControlManager');
 
 module.exports = keystone.createList('Variable', {
     fields: {
@@ -11,7 +12,5 @@ module.exports = keystone.createList('Variable', {
             type: Decimal
         }
     },
-    access: {
-      auth: true,
-    },
+    access: acm()
 });

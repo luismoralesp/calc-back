@@ -1,12 +1,13 @@
-const keystone = require('../../libs/keyston');
+const keystone = require('../../../libs/keyston');
 const { Relationship, DateTime } = require('@keystonejs/fields');
+const { acm } = require('../../controllers/AccessControlManager');
 
 module.exports = keystone.createList('Subscription', {
     fields: {
         date: { type: DateTime },
         calc: {
             type: Relationship,
-            ref: 'Calc',
+            ref: 'Calc.subscription',
             many: false
         },
         user: {
@@ -15,7 +16,5 @@ module.exports = keystone.createList('Subscription', {
             many: false
         }
     },
-    access: {
-      auth: true,
-    },
+    access: acm()
 });
