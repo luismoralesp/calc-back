@@ -9,6 +9,7 @@ platform:
 steps:
 - name: dev
   commands:
+  - apt update
   - apt install node
   - npm install -g pm2
   - pm2 start ecosystem.config.js
