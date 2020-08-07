@@ -8,8 +8,7 @@ platform:
   
 steps:
 - name: dev
-  image: node
   commands:
-  - npm install
+  - nvm use v14.4.0
   - npm install -g pm2
   - pm2 start ecosystem.config.js
