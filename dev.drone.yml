@@ -6,4 +6,5 @@ steps:
   image: node
   commands:
   - npm install
-  - PORT=3050 npm run dev
+  - npm install pm2
+  - pm2 ecosystem
