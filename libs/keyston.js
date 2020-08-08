@@ -8,7 +8,7 @@ const adapterConfig = { knexOptions: { connection: process.env.DATABASE } };
 const keystone = new Keystone({
     name: PROJECT_NAME,
     adapter: new Adapter(adapterConfig),
-    ///onConnect: process.env.CREATE_TABLES !== 'true' && initialiseData,
+    //onConnect: process.env.CREATE_TABLES !== 'true' && initialiseData,
 });
 
 module.exports = keystone;
