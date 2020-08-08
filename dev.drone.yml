@@ -13,4 +13,5 @@ steps:
   commands:
   - cd /home/ubuntu/calc-back
   - git pull origin master
+  - npm i
   - pm2 restart ecosystem.config.js
