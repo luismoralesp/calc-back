@@ -12,7 +12,6 @@ declare _key varchar;
 		result numeric;
 		keywords varchar[] := array['SELECT', 'UPDATE', 'INSERT', 'DELETE', 'DROP', 'ALTER'];
 begin
-
 	
 	FOR _key, _val IN SELECT * FROM jsonb_each_text(used_values)
 	LOOP
