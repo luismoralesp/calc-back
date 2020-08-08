@@ -3,7 +3,7 @@ const { KnexAdapter: Adapter } = require('@keystonejs/adapter-knex');
 const initialiseData = require('../initial-data')
 
 const PROJECT_NAME = 'calc';
-const adapterConfig = { knexOptions: { connection: 'postgres://postgres:dbcalc%23123@calc.c0ilzolikew6.us-east-2.rds.amazonaws.com/calc' } };
+const adapterConfig = { knexOptions: { connection: process.env.DATABASE } };
 
 const keystone = new Keystone({
     name: PROJECT_NAME,
