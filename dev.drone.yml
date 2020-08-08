@@ -1,12 +1,16 @@
 kind: pipeline
-type: exec
+type: ssh
 name: default
-  
+
+server:
+  host: ec2-3-20-232-197.us-east-2.compute.amazonaws.com
+  user: ubuntu
+  ssh_key:
+    from_secret: Defaultkey.pem
+
 steps:
 - name: dev
-  repo: calc_back
   commands:
-  - curl -sL https://deb.nodesource.com/setup_14.x | bash -
-  - apt-get install -y nodejs
-  - npm install -g pm2
-  - pm2 start ecosystem.config.js
+  - cd /home/ubuntu/calc-back
+  - git pull origin master
+  - pm2 restart ecosystem.config.js
