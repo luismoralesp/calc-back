@@ -5,5 +5,5 @@ exports.up = function (knex) {
 };
 
 exports.down = function (knex) {
-
+  knex.query('drop function get_result(formula text, used_values jsonb);');
 };
