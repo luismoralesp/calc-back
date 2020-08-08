@@ -14,5 +14,5 @@ steps:
   - cd /home/ubuntu/calc-back
   - git pull origin master
   - npm i
-  - knex migrate:latest
+  - npx knex migrate:latest
   - pm2 restart ecosystem.config.js
