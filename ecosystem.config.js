@@ -1,7 +1,11 @@
 module.exports = {
   apps: [{
     name: 'back',
-    script: 'PORT=3050 npm run dev',
-    watch: '.'
+    script: 'npm run dev',
+    watch: '.',
+    max_memory_restart: '300M',
+    env: {
+      "PORT": '3050',
+    }
   }]
 };
