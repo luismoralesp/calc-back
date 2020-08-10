@@ -2,6 +2,7 @@ kind: pipeline
 type: ssh
 name: default
 
+
 server:
   host: ec2-3-20-232-197.us-east-2.compute.amazonaws.com
   user: ubuntu
