@@ -59,7 +59,7 @@ const config = {
   },
 
   //Anyone can acces to images
-  Image: false,
+  Image: true,
 
   //Anyone can acces to variables
   Variable: true,
